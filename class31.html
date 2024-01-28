@@ -4,7 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title> show More or Show LESS </title>
+<style>
+  @font-face {
+    font-family: jameelnoori;
+    src: url(Font_Jameel-Noori-Nastaleeq.ttf);
+  }
+ 
+  #para{
+    font-family: jameelnoori;
+    text-align: center;
+    font-size: 26px;
+  }
+  #btn{
+margin: auto;   
+ text-align: center;
+  }
+</style>
+
 </head>
 
 <body>
@@ -36,10 +53,12 @@
 
 <br>
 
-<button id="btn" style="display: none"  onclick="ShowContent()">Show more</button>
+<button id="btn" style="display: none"  onclick="ShowContent()">Show More</button>
 
 <br>
 <br>
+
+
 <script>
   var text = document.getElementById('para').innerText;
 //  document.write (text.length, '==== > text length <br> <br>' )
@@ -51,7 +70,7 @@
   function usertext () {
         //document.write('<h1>user text above 100 </h1>')
         
-        var copy = text.slice (0,126)
+        var copy = text.slice (0,99)
         var show = document.getElementById('para').innerText=copy
 var btn  = document.getElementById('btn').style.display='block'
   }
@@ -59,11 +78,15 @@ var btn  = document.getElementById('btn').style.display='block'
   function ShowContent (){
     var btn = document.getElementById('btn')
     var para = document.getElementById('para')
-    if (btn.innerText === 'Show more' ){
+    if (btn.innerText === 'Show More' ){
       para.innerText = text;
-      btn.innerText = 'show less'
+      btn.innerText = 'show Less'
     }
-        
+        else{
+          var copy = text.slice(0,99)
+          para.innerText=copy
+          btn.innerText= 'Show More'
+        }
  
   }
 </script>
